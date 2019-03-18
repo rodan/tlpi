@@ -51,10 +51,7 @@ int main(int argc, char *argv[])
     while ((cnt = read(fdin, buf, BUF_SIZE)) > 0) {
         if (detect_holes) {
             if (!empty_buf(buf, cnt)) {
-                if (lseek(fdout, seek_cnt*BUF_SIZE, SEEK_SET) < 0) {
-                    errExit("during lseek");
-                }
-                if (write(fdout, buf, cnt) != cnt) {
+                if (pwrite(fdout, buf, cnt, seek_cnt*BUF_SIZE) != cnt) {
                     errExit("during write");
                 }
             }
