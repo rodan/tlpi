@@ -1,6 +1,6 @@
 include ../Makefile.inc
 
-GEN_EXE = 4.1_tee 4.2_hole 4.2_cp
+GEN_EXE = 4.1_tee 4.2_hole 4.2_cp 5.2_append 5.3_atomic_append
 
 EXE = ${GEN_EXE}
 
